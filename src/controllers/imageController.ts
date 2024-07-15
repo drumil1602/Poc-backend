@@ -18,3 +18,9 @@ export const getAllImgUrls = expressAsyncHandler(async (req: Request, res: Respo
     console.log(imgUrls);
     res.status(200).json(imgUrls);
 });
+
+export const getImgUrlById = expressAsyncHandler(async (req: Request, res: Response) => {
+    const imgId = req.params.id;
+    const imgUrl = await imageModel.findById(imgId);
+    res.status(200).json(imgUrl);
+});
