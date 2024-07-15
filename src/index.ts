@@ -22,6 +22,10 @@ connectDB();
 
 app.use(routes);
 
+app.get('/', (req: Request, res: Response) => {
+    res.status(200).send('ok');
+})
+
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
     console.error(err);
     // if statusCode is there it means that message will also be created by me
